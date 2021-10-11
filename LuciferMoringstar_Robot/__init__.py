@@ -11,12 +11,12 @@ from .Channel import (
 )
 
 HELP = """
-<u>Basic Commads</u>
+<b>Basic Commads</b>
 
 /start : check if am alive or dead
 /about : About Me
 
-<u>Bot Owner Only</u>
+<b>Bot Owner Only</b>
 
   /broadcast Replay Any Message or Media
   /stats user Status
@@ -26,20 +26,8 @@ HELP = """
   /total How Many Files Added In Database
   /logger  Get Logs
   /delete Delete File From Database
-
-[➡️How To Add Old Files For database](https://youtu.be/mtu5hgW-l_o)
-
-@Mo_Tech_YT
 """
 
 ABOUT = """
-➥ Name : Auto Filter With IMDB
-    
-➥ Creator : [Muhammed RK](t.me/Mrk_YT)
-
-➥ Language : Python3
-
-➥ Library : Pyrogram Asyncio 1.13.0
-
-➥ Source Code : [Click Me](https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot)
+ text = f"<b>○ Creator : <a href='tg://user?id={OWNER_ID}'>This Person</a>\n○ Language : <code>Python3</code>\n○ Channel : @SECLK\n○ Main Channel : @NetflixMovieslk</b>",
 """
