@@ -307,7 +307,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('<a href='tg://user?id={OWNER_ID}'>This Person</a>')
+                        InlineKeyboardButton('○ Update Channel', url='t.me/SECLK')
                     ]
                     ]
                 
