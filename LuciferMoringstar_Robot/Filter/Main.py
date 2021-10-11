@@ -1,4 +1,3 @@
-# (c) PR0FESS0R-99
 from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
@@ -29,7 +28,7 @@ async def filter(client, message):
         except UserNotParticipant:
             await client.send_message(
                 chat_id=message.from_user.id,
-                text="**Please Join Updates Channel**",
+                text="**Please Join My Updates Channel to use this Bot!**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -53,7 +52,7 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**ᴡᴇ ꜰᴏᴜɴᴅ ɪᴛ 😌** \n **🎬 Title : {search}**\n **❤️ by  :  {message.chat.title}**"
+        mo_tech_yt = f"**🎬 Title : {search}**\n **⭐ Rating : {random.choice(RATING)}** \n**🎭 Genre : {random.choice(GENRES)}** \n **❤️ by : {message.chat.title}**"
         files = await get_filter_results(query=search)
         if files:
             for file in files:
@@ -115,7 +114,7 @@ async def group(client, message):
     if 2 < len(message.text) < 50:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**ᴡᴇ ꜰᴏᴜɴᴅ ɪᴛ 😌** \n **🎬 Title : {search}**\n **❤️ by  :  {message.chat.title}**"
+        mo_tech_yt = f"**🎬 Title : {search}**\n **⭐ Rating : {random.choice(RATING)}** \n**🎭 Genre : {random.choice(GENRES)}** \n **❤️ by : {message.chat.title}**"
         nyva=BOT.get("username")
         if not nyva:
             botusername=await client.get_me()
@@ -275,15 +274,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 return
         elif query.data == "help":
-            buttons = [[
-                InlineKeyboardButton('○ Update Channel', url='t.me/SECLK'),
-                     ]]
+            buttons = [
+                [
+                    InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK')
+                ]
+                ]
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('○ Update Channel', url='t.me/SECLK')
+                    InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK')
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -306,7 +307,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('○ Update Channel', url='t.me/SECLK')
+                        InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK')
                     ]
                     ]
                 
@@ -337,7 +338,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('○ Update Channel', url='t.me/SECLK')
+                        InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK')
                     ]
                     ]
                 
@@ -353,4 +354,4 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "pages":
             await query.answer()
     else:
-        await query.answer("Sorry Dear 👀",show_alert=True)
+        await query.answer("കൌതുകും ലേശം കൂടുതൽ ആണല്ലേ👀",show_alert=True)
