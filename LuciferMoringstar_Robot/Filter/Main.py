@@ -53,7 +53,7 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**✅ ᴡᴇ ꜰᴏᴜɴᴅ ɪᴛ 😌❤️** \n **🎬 Title : {search}**\n **❤️ by  :  {message.chat.title}**"
+        mo_tech_yt = f"**ᴡᴇ ꜰᴏᴜɴᴅ ɪᴛ 😌** \n **🎬 Title : {search}**\n **❤️ by  :  {message.chat.title}**"
         files = await get_filter_results(query=search)
         if files:
             for file in files:
@@ -115,7 +115,7 @@ async def group(client, message):
     if 2 < len(message.text) < 50:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**✅ ᴡᴇ ꜰᴏᴜɴᴅ ɪᴛ 😌❤️** \n **🎬 Title : {search}**\n **❤️ by  :  {message.chat.title}**"
+        mo_tech_yt = f"**ᴡᴇ ꜰᴏᴜɴᴅ ɪᴛ 😌** \n **🎬 Title : {search}**\n **❤️ by  :  {message.chat.title}**"
         nyva=BOT.get("username")
         if not nyva:
             botusername=await client.get_me()
@@ -276,24 +276,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 return
         elif query.data == "help":
             buttons = [[
-                InlineKeyboardButton('Update Channel', url='t.me/SECLK'),
+                InlineKeyboardButton('○ Update Channel', url='t.me/SECLK'),
                      ]]
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "about":
-             await query.message.edit_text(
-            text = f"<b>○ Creator : <a href='tg://user?id={OWNER_ID}'>This Person</a>\n○ Language : <code>Python3</code>\n○ Library : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio {__version__}</a>\n○ Source Code : <a href='https://github.com/sahansbandaralk/File-Sharing-Bot'>Click here</a>\n○ Channel : @SECLK\n○ Main Channel : @NetflixMovieslk</b>",
-            disable_web_page_preview = True,
-            reply_markup = InlineKeyboardMarkup(
+            buttons = [
                 [
-                    [
-                        InlineKeyboardButton("🔒 Close", callback_data = "close")
-                    ]
+                    InlineKeyboardButton('○ Update Channel', url='t.me/SECLK')
                 ]
-            )
-        )
+                ]
+            await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
-        elif data == "close":
+
+        elif query.data.startswith("pr0fess0r_99"):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
