@@ -276,7 +276,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "help":
             buttons = [
                 [
-                    InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK')
+                     InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK'),
+                     InlineKeyboardButton('○ Main Channel', url='https://t.me/NetflixMovieslk')
                 ]
                 ]
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
