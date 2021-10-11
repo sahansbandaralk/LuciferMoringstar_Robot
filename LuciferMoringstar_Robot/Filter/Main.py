@@ -284,7 +284,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK')
+                     InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK'),
+                     InlineKeyboardButton('○ Main Channel', url='https://t.me/NetflixMovieslk')
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -307,7 +308,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK')
+                         InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK'),
+                         InlineKeyboardButton('○ Main Channel', url='https://t.me/NetflixMovieslk')
                     ]
                     ]
                 
@@ -338,7 +340,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK')
+                         InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK'),
+                         InlineKeyboardButton('○ Main Channel', url='https://t.me/NetflixMovieslk')
                     ]
                     ]
                 
