@@ -281,14 +281,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "about":
-            buttons = [
+             await query.message.edit_text(
+            text = f"<b>○ Creator : <a href='tg://user?id={OWNER_ID}'>This Person</a>\n○ Language : <code>Python3</code>\n○ Library : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio {__version__}</a>\n○ Source Code : <a href='https://github.com/sahansbandaralk/File-Sharing-Bot'>Click here</a>\n○ Channel : @SECLK\n○ Main Channel : @NetflixMovieslk</b>",
+            disable_web_page_preview = True,
+            reply_markup = InlineKeyboardMarkup(
                 [
-                    InlineKeyboardButton('○ Update Channel', url='t.me/SECLK'),
-                    InlineKeyboardButton('○ Main Channel : @NetflixMovieslk')
+                    [
+                        InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    ]
                 ]
-                ]
-            await query.message.edit(text=f"{ABOUT}".format(TUTORIAL), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-
+            )
+        )
 
         elif query.data.startswith("pr0fess0r_99"):
             ident, file_id = query.data.split("#")
