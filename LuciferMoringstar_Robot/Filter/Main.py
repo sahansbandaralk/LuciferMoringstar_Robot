@@ -52,7 +52,7 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🎬 Title : {search}**\n  **❤️ by : {message.chat.title}**\n **<a href='url=https://t.me/SECLK '>©️ ꜱᴇᴄʟᴋ </a>**"
+        mo_tech_yt = f"**🎬 Title : {search}**\n  **❤️ by : {message.chat.title}**\n **@SECLK**"
         files = await get_filter_results(query=search)
         if files:
             for file in files:
@@ -114,7 +114,7 @@ async def group(client, message):
     if 2 < len(message.text) < 50:    
         btn = []
         search = message.text
-         mo_tech_yt = f"**🎬 Title : {search}**\n  **❤️ by : {message.chat.title}**\n <a href='url=https://t.me/SECLK '>©️ ꜱᴇᴄʟᴋ </a>**"
+         mo_tech_yt = f"**🎬 Title : {search}**\n  **❤️ by : {message.chat.title}**\n **@SECLK**"
         nyva=BOT.get("username")
         if not nyva:
             botusername=await client.get_me()
