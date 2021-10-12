@@ -84,7 +84,9 @@ async def start(bot, message):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('ᴍᴏʀᴇ ʙᴏᴛꜱ 🤖', url=f'{TUTORIAL}')
+                        
+                      InlineKeyboardButton('ꜱᴇᴀʀᴄʜ ᴀɢᴀɪɴ 🔎', switch_inline_query_current_chat=query),
+                      InlineKeyboardButton('ᴍᴏʀᴇ ʙᴏᴛꜱ', url='https://t.me/SECLK')
                     ]
                     ]
                 await bot.send_cached_media(
@@ -331,8 +333,8 @@ async def bot_info(bot, message):
     buttons = [
         [
             
-             InlineKeyboardButton('○ More Bots', url='https://t.me/SECLK'),
-              InlineKeyboardButton('○ Main Channel', url='https://t.me/NetflixMovieslk')
+             InlineKeyboardButton('ᴍᴏʀᴇ ʙᴏᴛꜱ', url='https://t.me/SECLK'),
+              InlineKeyboardButton('ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/NetflixMovieslk')
         ]
         ]
     await message.reply(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
