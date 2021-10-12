@@ -31,5 +31,5 @@ HELP = """
 """
 
 ABOUT = """
- <b>○Creator : @Anonymous_Sender_SEC </b>\n<b>○Language : Python3</b>\n<b>Bot Channel : @SECLK</b>\n<b>○Main Channel : @NetflixMovieslk</b>",
+ <b>ᴄʀᴇᴀᴛᴏʀ : @ᴀɴᴏɴʏᴍᴏᴜꜱ_ꜱᴇɴᴅᴇʀ_ꜱᴇᴄ </b>\n<b>ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ3</b>\n<b>ʙᴏᴛ ᴄʜᴀɴɴᴇʟ : @ꜱᴇᴄʟᴋ</b>\n<b>ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ : @ɴᴇᴛꜰʟɪxᴍᴏᴠɪᴇꜱʟᴋ</b>",
 """
