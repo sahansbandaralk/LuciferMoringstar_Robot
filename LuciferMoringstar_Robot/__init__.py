@@ -26,8 +26,10 @@ HELP = """
   /total : How Many Files Added In Database
   /logger : Get Logs
   /delete : Delete File From Database **
+  
+<b>Bot Channel : @SECLK</b> 
 """
 
 ABOUT = """
- <b>○Creator : @Anonymous_Sender_SEC </b>\n<b>○Language : Python3</b>\n<b>○Channel : @SECLK</b>\n<b>○Main Channel : @NetflixMovieslk</b>",
+ <b>○Creator : @Anonymous_Sender_SEC </b>\n<b>○Language : Python3</b>\n<b>Bot Channel : @SECLK</b>\n<b>○Main Channel : @NetflixMovieslk</b>",
 """
