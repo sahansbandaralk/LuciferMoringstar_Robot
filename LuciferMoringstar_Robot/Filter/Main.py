@@ -1,3 +1,4 @@
+# (c) PR0FESS0R-99
 from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
@@ -52,7 +53,7 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-          mo_tech_yt =f"**🎬 ᴛɪᴛʟᴇ : {search}**\n **❤️ ʙʏ  : {message.chat.title}**"
+        mo_tech_yt = f"**🗂️ Title :{search}** \n**⭐ Rating:{random.choice(RATING)}** \n**🎭 Genre:{random.choice(GENRES)}** \n**📤 by : {message.chat.title}**"
         files = await get_filter_results(query=search)
         if files:
             for file in files:
@@ -114,7 +115,7 @@ async def group(client, message):
     if 2 < len(message.text) < 50:    
         btn = []
         search = message.text
-          mo_tech_yt =f"**🎬 ᴛɪᴛʟᴇ : {search}**\n **❤️ ʙʏ  : {message.chat.title}**"
+        mo_tech_yt = f"**🗂️ Title : {search}** \n**⭐ Rating : {random.choice(RATING)}** \n**🎭 Genre:{random.choice(GENRES)}** \n**📤 by : {message.chat.title}**"
         nyva=BOT.get("username")
         if not nyva:
             botusername=await client.get_me()
@@ -274,12 +275,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 return
         elif query.data == "help":
-            buttons = [
-                [
-                     InlineKeyboardButton('ᴍᴏʀᴇ ʙᴏᴛꜱ', url='https://t.me/SECLK'),
-                     InlineKeyboardButton('ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/NetflixMovieslk')
-                ]
-                ]
+            buttons = [[
+                 InlineKeyboardButton('ᴍᴏʀᴇ ʙᴏᴛꜱ', url='https://t.me/SECLK'),
+                 InlineKeyboardButton('ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/NetflixMovieslk')
+                ]]
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "about":
@@ -289,7 +288,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                      InlineKeyboardButton('ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/NetflixMovieslk')
                 ]
                 ]
-            await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=f"{ABOUT}".format(TUTORIAL), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
         elif query.data.startswith("pr0fess0r_99"):
@@ -309,8 +308,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                         InlineKeyboardButton('ᴍᴏʀᴇ ʙᴏᴛꜱ', url='https://t.me/SECLK'),
-                         InlineKeyboardButton('ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/NetflixMovieslk')
+                         InlineKeyboardButton('ꜱᴇᴀʀᴄʜ ᴀɢᴀɪɴ 🔎', switch_inline_query_current_chat=query),
+                         InlineKeyboardButton('ᴍᴏʀᴇ ʙᴏᴛꜱ', url='https://t.me/SECLK')
                     ]
                     ]
                 
@@ -341,8 +340,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                         InlineKeyboardButton('ᴍᴏʀᴇ ʙᴏᴛꜱ', url='https://t.me/SECLK'),
-                         InlineKeyboardButton('ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/NetflixMovieslk')
+                        InlineKeyboardButton('🖥️ How To Own 🖥️', url=f'{TUTORIAL}')
                     ]
                     ]
                 
@@ -358,4 +356,4 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "pages":
             await query.answer()
     else:
-        await query.answer("So So Dear👀",show_alert=True)
+        await query.answer("sorry dear👀",show_alert=True)
